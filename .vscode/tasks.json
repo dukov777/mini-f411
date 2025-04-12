@@ -1,0 +1,45 @@
+// tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PyOCD Flash",
+            "type": "shell",
+            "command": "pyocd flash -t stm32f411ce ${workspaceFolder}/build/Debug/mini-f411.elf",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+        },
+        {
+            "label": "STLINK Flash",
+            "type": "shell",
+            "command": "STM32_Programmer_CLI.exe  -c port=SWD freq=4000 mode=normal -w ${workspaceFolder}/build/Debug/blink.elf -v -g",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+        },
+        {
+            "label": "CMAKE clean",
+            "type": "shell",
+            "command": "C:/STM32CubeCLT_1.16.0/CMake/bin/cmake.exe --build ${workspaceFolder}/build/Debug --target clean --",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+        }
+    ]
+}
