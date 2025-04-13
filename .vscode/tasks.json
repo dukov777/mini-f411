@@ -40,6 +40,34 @@
                 "showReuseMessage": false,
                 "clear": true
             },
+        },
+        {
+            "label": "Start PyOCD Server",
+            "type": "shell",
+            "command": "pyocd gdbserver -t stm32f411ce --persist",
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "pattern": [
+                        {
+                            "regexp": ".",
+                            "file": 1,
+                            "line": 1,
+                            "message": 1
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": ".",
+                        "endsPattern": "GDB server started on port 3333"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Stop PyOCD Server",
+            "type": "shell",
+            "command": "pkill -f 'pyocd gdbserver'"
         }
     ]
 }

@@ -17,7 +17,9 @@
             "runToEntryPoint": "main",
             "servertype": "external",
             "gdbTarget": "localhost:3333",
-            "gdbPath": "arm-none-eabi-gdb"
+            "gdbPath": "arm-none-eabi-gdb",
+            "preLaunchTask": "Start PyOCD Server",
+            "postDebugTask": "Stop PyOCD Server"
         }
     ]
 }
