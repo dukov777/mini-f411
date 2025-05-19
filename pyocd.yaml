@@ -1,0 +1,3 @@
+target_override: STM32F411CE
+frequency: 8000000
+
